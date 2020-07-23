@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+.container {
+    background-color: aqua;
+    width: 50%;
+
+}
+
+.btn {
+ text-align: center;
+ background-color: #ecf1f7;
+ height: 100px;
+ width: 300px;
+ margin: 10px;
+ border-radius: 5px;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
