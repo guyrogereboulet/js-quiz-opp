@@ -69,33 +69,43 @@ class Quiz {
 
 // regroup all function relative to the app display 
 const display =  {
+    elementShown: function (id,text) {
+        let element = document.getElementById(id);
+        element.innerHTML = text;
+    },
+    endQuiz: function () {
+        let endQuizHTML = `
+            <h1>Quiz terminé !</h1>
+            <h3> Votre score est de : ${quiz.score} / ${quiz.questions.length}</h3>`;
+        this.elementShown("question", endQuizHTML);
+    },
+    question: function() {
+        this.elementShown("question", quiz.getCurrentQuestion().text)
+    }
+
 
 }
 
 
-// game logic 
 
- quizApp = () => {
-
+// Game logic
+quizApp = () => {
     if (quiz.hadEnded()) {
-        // End
-
         display.endQuiz();
-        
-
     } else {
-
-        // Logic
-        // question 
-        // choice 
-
+        display.question();
+        // display.choices();
+        // display.progress();
     }
 }
 
-
-
-
 // create quiz
 let quiz = new Quiz(questions);
+quizApp();
 
 console.log(quiz);
+
+
+
+
+

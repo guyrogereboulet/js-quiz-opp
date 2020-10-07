@@ -68,6 +68,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    flex-basis: auto;
 }
 
 h1 {
@@ -76,6 +77,13 @@ h1 {
     font-size: 3rem;
     text-align: center;
     color:#dfe4ea;
+}
+
+h2 {
+    color:#dfe4ea;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 span, i {
