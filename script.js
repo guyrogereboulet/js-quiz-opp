@@ -60,8 +60,8 @@ class Quiz {
         }
         this.currentQuestionIndex++;
     }
-    hadEnded() {
-        return this.currentQuestionIndex >= this.questions.lenght;
+    hasEnded() {
+        return this.currentQuestionIndex >= this.questions.length;
     }
     
 }
@@ -77,10 +77,31 @@ const display =  {
         let endQuizHTML = `
             <h1>Quiz terminé !</h1>
             <h3> Votre score est de : ${quiz.score} / ${quiz.questions.length}</h3>`;
-        this.elementShown("question", endQuizHTML);
+        this.elementShown("quiz", endQuizHTML);
     },
     question: function() {
         this.elementShown("question", quiz.getCurrentQuestion().text)
+    },
+
+    choices: function() {
+        let choices = quiz.getCurrentQuestion().choices;
+
+        guessHandler = (id, guess) => {
+            document.getElementById(id).onclick = function() {
+                quiz.guess(guess);
+                quizApp();
+            }
+        }
+        for (let i = 0; i < choices.length; i++) {
+            this.elementShown("choice" + i,choices[i]);
+            guessHandler("guess" + i, choices[i]);
+        } 
+
+    },
+
+    progress: function() {
+        let currentQuestionNumber = quiz.currentQuestionIndex + 1;
+        this.elementShown("progress", "Question " + currentQuestionNumber + " sur " + quiz.questions.length);
     }
 
 
@@ -90,12 +111,12 @@ const display =  {
 
 // Game logic
 quizApp = () => {
-    if (quiz.hadEnded()) {
+    if (quiz.hasEnded()) {
         display.endQuiz();
     } else {
         display.question();
-        // display.choices();
-        // display.progress();
+        display.choices();
+        display.progress();
     }
 }
 

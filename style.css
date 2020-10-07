@@ -71,6 +71,17 @@ body {
     flex-basis: auto;
 }
 
+.choices p {
+ font-size: 1.5rem;
+}
+
+#progress {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    color:#dfe4ea;
+}
+
 h1 {
     margin-bottom: 3rem;
     text-transform: uppercase;
@@ -81,6 +92,13 @@ h1 {
 
 h2 {
     color:#dfe4ea;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: #ffa502;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1rem;
