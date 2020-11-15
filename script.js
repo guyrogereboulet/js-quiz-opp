@@ -13,14 +13,14 @@ class Question {
 let questions = [
     new Question(
 
-        "Quelle méthode Javascript permet de filtrer les éléments d'un tableau",
+        "Quale metodo JavaScript consente di filtrare gli elementi di un array ?",
         ["index()", "map()", "filter()", "reduce()"],
          "filter()"
     ),
 
     new Question(
         
-        "Quelle méthode Javascript permet de vérifier si un élément figure dans un tableau",
+        "Quale metodo JavaScript ti consente di verificare se un elemento è in un array ?",
          ["isNaN()", "includes()", "findIndex()", "isOdd()"],
           "includes()"
           
@@ -28,14 +28,14 @@ let questions = [
 
     new Question(
         
-        "Quelle méthode transforme du JSON en un objet Javascript ?", 
+        "Quale metodo trasforma JSON in un oggetto JavaScript ?", 
         ["JSON.parse()", "JSON.stringify()", "JSON.object()", "JSON.toJS"]
         , "JSON.parse()"
     ),
 
     new Question(
 
-        "Quel objet Javascript permet d'arrondir à l'entier le plus proche", 
+        "Quale oggetto JavaScript consente di arrotondare al numero intero più vicino ?", 
         ["Math.ceil()", "Math.floor()", "Math.round()", "Math.random()"]
         , "Math.round()"
     )
@@ -75,8 +75,8 @@ const display =  {
     },
     endQuiz: function () {
         let endQuizHTML = `
-            <h1>Quiz terminé !</h1>
-            <h3> Votre score est de : ${quiz.score} / ${quiz.questions.length}</h3>`;
+            <h1>Quiz terminato !</h1>
+            <h3> Il vostro score è di : ${quiz.score} / ${quiz.questions.length}</h3>`;
         this.elementShown("quiz", endQuizHTML);
     },
     question: function() {
@@ -101,7 +101,7 @@ const display =  {
 
     progress: function() {
         let currentQuestionNumber = quiz.currentQuestionIndex + 1;
-        this.elementShown("progress", "Question " + currentQuestionNumber + " sur " + quiz.questions.length);
+        this.elementShown("progress", "Domanda " + currentQuestionNumber + " su " + quiz.questions.length);
     }
 
 
